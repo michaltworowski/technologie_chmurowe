@@ -1,5 +1,4 @@
-import cv2
-#import imutils
+﻿import cv2
 
 # Initializing the HOG person
 # detector
@@ -9,10 +8,6 @@ hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 # Reading the Image
 img = cv2.imread('grupa_osob.jpg')
 img = cv2.resize(img, (700,400))
-
-# Resizing the Image
-#image = imutils.resize(img,
-					#width=min(400, image.shape[1]))
 
 # Detecting all the regions in the
 # Image that has a pedestrians inside it
