@@ -70,6 +70,7 @@ class PeopleCounterDynamicForm(Resource):
 
         return {'people count dynamic from url': len(rects)}
 
+
 api.add_resource(PeopleCounterStatic, '/')
 api.add_resource(PeopleCounterDynamicUrl, '/dynamic')
 api.add_resource(PeopleCounterDynamicForm, '/form')
