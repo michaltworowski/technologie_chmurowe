@@ -56,8 +56,12 @@ class PeopleCounterDynamicForm(Resource):
         headers = {'Content-Type': 'text/html'}
         f = request.files['file']
         f.save(f.filename)
-        os.remove('img.jpg')
-        os.rename(f.filename, 'img.jpg')
+        try:
+            os.rename(f.filename, 'img.jpg')
+        except WindowsError:
+            os.remove('img.jpg')
+            os.rename(f.filename, 'img.jpg')
+
         image = cv2.imread('img.jpg')
         image = cv2.resize(image, (700, 400))
 
